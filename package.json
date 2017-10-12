@@ -1,0 +1,10 @@
+{
+  "name": "MVMRPG",
+  "description": "Magic vs Machine RPG",
+  "version": "0.0.1",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
