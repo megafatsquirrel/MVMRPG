@@ -1,0 +1,108 @@
+{
+    "assets": {
+        "rectangle_image": {"type": "image", "source": "assets/images/rectangle.png"},
+        "grass_tile_image": {"type": "image", "source": "assets/images/grass_tile.png"},
+        "male_fighter_spritesheet": {"type": "spritesheet", "source": "assets/images/characters/fighter_m.png", "frame_width": 24, "frame_height": 32},
+        "female_mage_spritesheet": {"type": "spritesheet", "source": "assets/images/characters/mage_f.png", "frame_width": 24, "frame_height": 32},
+        "bat_spritesheet": {"type": "spritesheet", "source": "assets/images/monsters/bat.png", "frame_width": 128, "frame_height": 128}
+    },
+    "groups": [
+        "background",
+        "player_units",
+        "enemy_units",
+        "hud"
+    ],
+    "prefabs": {
+        "background": {
+            "type": "background",
+            "position": {"x": 0, "y": 0},
+            "properties": {
+                "texture": "grass_tile_image",
+                "group": "background",
+                "width": 320,
+                "height": 320
+            }
+        },
+        "enemy_rectangle": {
+            "type": "rectangle",
+            "position": {"x": 0, "y": 200},
+            "properties": {
+                "texture": "rectangle_image",
+                "group": "hud",
+                "scale": {"x": 0.3, "y": 1}
+            }
+        },
+        "action_rectangle": {
+            "type": "rectangle",
+            "position": {"x": 96, "y": 200},
+            "properties": {
+                "texture": "rectangle_image",
+                "group": "hud",
+                "scale": {"x": 0.3, "y": 1}
+            }
+        },
+        "player_rectangle": {
+            "type": "rectangle",
+            "position": {"x": 192, "y": 200},
+            "properties": {
+                "texture": "rectangle_image",
+                "group": "hud",
+                "scale": {"x": 0.4, "y": 1}
+            }
+        },
+        "fighter": {
+            "type": "player_unit",
+            "position": {"x": 250, "y": 70},
+            "properties": {
+                "texture": "male_fighter_spritesheet",
+                "group": "player_units",
+                "frame": 10,
+                "stats": {
+                    "attack": 15,
+                    "defense": 5,
+                    "health": 100
+                }
+            }
+        },
+        "mage": {
+            "type": "player_unit",
+            "position": {"x": 250, "y": 150},
+            "properties": {
+                "texture": "female_mage_spritesheet",
+                "group": "player_units",
+                "frame": 10,
+                "stats": {
+                    "attack": 20,
+                    "defense": 2,
+                    "health": 100
+                }
+            }
+        },
+        "bat1": {
+            "type": "enemy_unit",
+            "position": {"x": 100, "y": 90},
+            "properties": {
+                "texture": "bat_spritesheet",
+                "group": "enemy_units",
+                "stats": {
+                    "attack": 10,
+                    "defense": 1,
+                    "health": 30
+                }
+            }
+        },
+        "bat2": {
+            "type": "enemy_unit",
+            "position": {"x": 100, "y": 170},
+            "properties": {
+                "texture": "bat_spritesheet",
+                "group": "enemy_units",
+                "stats": {
+                    "attack": 10,
+                    "defense": 1,
+                    "health": 30
+                }
+            }
+        }
+    }
+}
