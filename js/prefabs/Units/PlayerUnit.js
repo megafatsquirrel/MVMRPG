@@ -29,3 +29,22 @@ RPG.PlayerUnit.prototype.kill = function () {
     menu_item_index = this.game_state.prefabs.player_units_menu.find_item_index(this.name);
     this.game_state.prefabs.player_units_menu.menu_items[menu_item_index].alpha = 0.5;
 };
+
+RPG.PlayerUnit.prototype.receive_experience = function (experience) {
+    "use strict";
+    var next_level_data, stat;
+    // increase experience
+    this.stats.experience += experience;
+    next_level_data = this.game_state.experience_table[this.stats.current_level];
+    // if current experience is greater than the necessary to the next level, the unit gains a level
+    if (this.stats.experience >= next_level_data.required_exp) {
+        this.stats.current_level += 1;
+        this.stats.experience = 0;
+        // increase unit stats according to new level
+        for (stat in next_level_data.stats_increase) {
+            if (next_level_data.stats_increase.hasOwnProperty(stat)) {
+                this.stats[stat] += next_level_data.stats_increase[stat];
+            }
+        }
+    }
+};

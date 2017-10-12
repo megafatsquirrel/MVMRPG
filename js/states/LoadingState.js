@@ -8,10 +8,11 @@ RPG.LoadingState = function () {
 RPG.LoadingState.prototype = Object.create(Phaser.State.prototype);
 RPG.LoadingState.prototype.constructor = RPG.LoadingState;
 
-RPG.LoadingState.prototype.init = function (level_data, next_state) {
+RPG.LoadingState.prototype.init = function (level_data, next_state, extra_parameters) {
     "use strict";
     this.level_data = level_data;
     this.next_state = next_state;
+    this.extra_parameters = extra_parameters;
 };
 
 RPG.LoadingState.prototype.preload = function () {
@@ -38,5 +39,5 @@ RPG.LoadingState.prototype.preload = function () {
 
 RPG.LoadingState.prototype.create = function () {
     "use strict";
-    this.game.state.start(this.next_state, true, false, this.level_data);
+    this.game.state.start(this.next_state, true, false, this.level_data, this.extra_parameters);
 };

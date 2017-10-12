@@ -7,6 +7,8 @@ RPG.EnemyUnit = function (game_state, name, position, properties) {
     this.anchor.setTo(0.5);
     
     this.scale.setTo(-1, 1);
+    
+    this.attack = new RPG.PhysicalAttack(this.game_state, this.name + "_attack", {x: 0, y: 0}, {group: "attacks", owner_name: this.name});
 };
 
 RPG.EnemyUnit.prototype = Object.create(RPG.Unit.prototype);
@@ -19,7 +21,7 @@ RPG.EnemyUnit.prototype.act = function () {
     target_index = this.game_state.rnd.between(0, this.game_state.groups.player_units.countLiving() - 1);
     target = this.game_state.groups.player_units.children[target_index];
     
-    this.attack(target);
+    this.attack.hit(target);
 };
 
 RPG.EnemyUnit.prototype.kill = function () {

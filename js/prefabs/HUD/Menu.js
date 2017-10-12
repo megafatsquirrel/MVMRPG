@@ -68,8 +68,9 @@ RPG.Menu.prototype.remove_item = function (index) {
 
 RPG.Menu.prototype.enable = function () {
     "use strict";
-    this.current_item_index = 0;
     if (this.menu_items.length > 0) {
+        this.menu_items[this.current_item_index].selection_out();
+        this.current_item_index = 0;
         this.menu_items[this.current_item_index].selection_over();
     }
     this.game_state.game.input.keyboard.addCallbacks(this, this.process_input);
@@ -81,4 +82,18 @@ RPG.Menu.prototype.disable = function () {
         this.menu_items[this.current_item_index].selection_out();
     }
     this.current_item_index = 0;
+};
+
+RPG.Menu.prototype.show = function () {
+    "use strict";
+    this.menu_items.forEach(function (menu_item) {
+        menu_item.visible = true;
+    }, this);
+};
+
+RPG.Menu.prototype.hide = function () {
+    "use strict";
+    this.menu_items.forEach(function (menu_item) {
+        menu_item.visible = false;
+    }, this);
 };
