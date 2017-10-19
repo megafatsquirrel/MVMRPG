@@ -17,13 +17,18 @@ Parts of the world
   - Complete - continue to removing boulder that is blocking the cave 
   
 2: Journey through the mountain
-  -Eldar wants you to investgate the cave, since it is the only thing connecting the outside world, besides waterways
-  -Player goes to cave and sees an opening where monsters can pour in
-  -Curious the player pushes forward
-  -Enter the cave
-  -The goal is to get to the exit, but their is a old grumpy bear walking around in there
-  -Complete - Exit the cave and continue to the twinlake town 
+  - Eldar wants you to investgate the cave, since it is the only thing connecting the outside world, besides waterways
+  - Player goes to cave and sees an opening where monsters can pour in
+  - Curious the player pushes forward
+  - Enter the cave
+  - The goal is to get to the exit, but their is a old grumpy bear walking around in there
+  - Complete - Exit the cave and continue to the twinlake town 
 
 3: Twinlake Town - Unblock the bridge
+  - TODO
+
 4: Find a way through the wetland to get to the castle
+  - TODO
+
 5: Castle of the evil overlord
+  - TODO
