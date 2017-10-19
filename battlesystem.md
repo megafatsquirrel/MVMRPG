@@ -1,0 +1,12 @@
+- Monster roam the map and touching one or interacting starts the battle
+- Turn based, player goes first unless otherwise noted
+- The player will have a machine rifle, modification will be made to upgrade attack and other stats, same rifle, but changing attachments
+- Player has Overdrive, builds on hits to enemy, carry over to fights, super attack based on current weapon attachments
+- The STR stat will prioritize larger rounds, higher single target damage
+- The DEX stat will prioritize multiple rounds, more rounds for area damage, less damage direct
+- The Vit stat increases HP
+- Armor will decrease damage
+- The party will be the player only, later finding a robot companion 
+- The robot companion will be configured base on attachments, just like the machine rifle
+- The companion will be an NPC and act based on what attachments the player used
+- The player will get items to use, healing, remove debuffs, increase stats, etc..
