@@ -63,7 +63,7 @@
                  "properties":
                     {
                      "group":"players",
-                     "texture":"male_fighter_spritesheet",
+                     "texture":"female_ranger_spritesheet",
                      "walking_speed":"100"
                     },
                  "type":"player",

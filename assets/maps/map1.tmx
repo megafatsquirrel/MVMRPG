@@ -1632,7 +1632,7 @@
   <object name="player" type="player" gid="118" x="224" y="240">
    <properties>
     <property name="group" value="players"/>
-    <property name="texture" value="male_fighter_spritesheet"/>
+    <property name="texture" value="female_ranger_spritesheet"/>
     <property name="walking_speed" value="100"/>
    </properties>
   </object>
