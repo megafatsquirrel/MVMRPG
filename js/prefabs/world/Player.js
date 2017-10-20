@@ -20,6 +20,13 @@ RPG.Player = function (game_state, name, position, properties) {
     this.body.collideWorldBounds = true;
 
     this.cursors = this.game_state.game.input.keyboard.createCursorKeys();
+
+    this.wasd = {
+        up: this.game_state.game.input.keyboard.addKey(Phaser.Keyboard.W),
+        down: this.game_state.game.input.keyboard.addKey(Phaser.Keyboard.S),
+        left: this.game_state.game.input.keyboard.addKey(Phaser.Keyboard.A),
+        right: this.game_state.game.input.keyboard.addKey(Phaser.Keyboard.D),
+    };
 };
 
 RPG.Player.prototype = Object.create(RPG.Prefab.prototype);
@@ -30,13 +37,13 @@ RPG.Player.prototype.update = function () {
     this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision_back);
     this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision_front);
     
-    if (this.cursors.left.isDown && this.body.velocity.x <= 0) {
+    if ((this.cursors.left.isDown || this.wasd.left.isDown) && this.body.velocity.x <= 0) {
         // move left
         this.body.velocity.x = -this.walking_speed;
         if (this.body.velocity.y === 0) {
             this.animations.play("walking_left");
         }
-    } else if (this.cursors.right.isDown && this.body.velocity.x >= 0) {
+    } else if ((this.cursors.right.isDown || this.wasd.right.isDown) && this.body.velocity.x >= 0) {
         // move right
         this.body.velocity.x = +this.walking_speed;
         if (this.body.velocity.y === 0) {
@@ -46,13 +53,13 @@ RPG.Player.prototype.update = function () {
         this.body.velocity.x = 0;
     }
 
-    if (this.cursors.up.isDown && this.body.velocity.y <= 0) {
+    if ((this.cursors.up.isDown || this.wasd.up.isDown) && this.body.velocity.y <= 0) {
         // move up
         this.body.velocity.y = -this.walking_speed;
         if (this.body.velocity.x === 0) {
             this.animations.play("walking_up");
         }
-    } else if (this.cursors.down.isDown && this.body.velocity.y >= 0) {
+    } else if ((this.cursors.down.isDown || this.wasd.down.isDown) && this.body.velocity.y >= 0) {
         // move down
         this.body.velocity.y = +this.walking_speed;
         if (this.body.velocity.x === 0) {
