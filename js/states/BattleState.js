@@ -12,6 +12,7 @@ RPG.BattleState = function () {
         "inventory": RPG.Inventory.prototype.constructor
     };
     
+    // Global text style for menus
     this.TEXT_STYLE = {font: "14px Arial", fill: "#FFFFFF"};
 };
 
@@ -126,17 +127,18 @@ RPG.BattleState.prototype.init_hud = function () {
 };
 
 RPG.BattleState.prototype.show_units = function (group_name, position, menu_item_constructor) {
-    "use strict";
-    var unit_index, menu_items, unit_menu_item, units_menu;
     
-    // create units menu items
-    unit_index = 0;
-    menu_items = [];
+    var unit_index = 0;
+    var menu_items = [];
+    var unit_menu_item;
+    var units_menu;
+    
     this.groups[group_name].forEach(function (unit) {
-        unit_menu_item = new menu_item_constructor(this, unit.name + "_menu_item", {x: position.x, y: position.y + unit_index * 20}, {group: "hud", text: unit.name, style: Object.create(this.TEXT_STYLE)});
+        unit_menu_item = new menu_item_constructor(this, unit.name + "_menu_item", {x: position.x, y: position.y + unit_index * 30}, {group: "hud", text: unit.name, style: Object.create(this.TEXT_STYLE)});
         unit_index += 1;
         menu_items.push(unit_menu_item);
     }, this);
+    
     // create units menu
     units_menu = new RPG.Menu(this, group_name + "_menu", position, {group: "hud", menu_items: menu_items});
 };

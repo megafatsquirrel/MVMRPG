@@ -11,6 +11,7 @@ RPG.MenuItem.prototype.constructor = RPG.MenuItem;
 RPG.MenuItem.prototype.selection_over = function () {
     "use strict";
     this.fill = "#FFFF00";
+    // TODO: Make this a pulsing color & add arrow icon
 };
 
 RPG.MenuItem.prototype.selection_out = function () {

@@ -36,17 +36,17 @@ RPG.WorldState.prototype.init = function (level_data, extra_parameters) {
     
     // if no party data is in the parameters, initialize it with default values
     this.party_data = extra_parameters.party_data || {
-        "ranger": {
+        "Ranger": {
             "type": "player_unit",
-            "position": {"x": 250, "y": 150},
+            "position": {"x": 250, "y": 100},
             "properties": {
                 "texture": "female_ranger_spritesheet",
                 "group": "player_units",
                 "frame": 10,
                 "stats": {
-                    "attack": 10,
+                    "attack": 100,
                     "magic_attack": 10,
-                    "defense": 3,
+                    "defense": 300,
                     "health": 100,
                     "mana": 100,
                     "speed": 20,
