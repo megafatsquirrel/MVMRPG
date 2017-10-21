@@ -18,6 +18,12 @@ RPG.Menu.prototype.constructor = RPG.Menu;
 RPG.Menu.prototype.process_input = function (event) {
     "use strict";
     switch (event.keyCode) {
+    case Phaser.Keyboard.W:
+        if (this.current_item_index > 0) {
+            // navigate to previous item
+            this.move_selection(this.current_item_index - 1);
+        }
+        break;
     case Phaser.Keyboard.UP:
         if (this.current_item_index > 0) {
             // navigate to previous item
@@ -30,7 +36,16 @@ RPG.Menu.prototype.process_input = function (event) {
             this.move_selection(this.current_item_index + 1);
         }
         break;
+    case Phaser.Keyboard.S:
+        if (this.current_item_index < this.menu_items.length - 1) {
+            // navigate to next item
+            this.move_selection(this.current_item_index + 1);
+        }
+        break;
     case Phaser.Keyboard.SPACEBAR:
+        this.menu_items[this.current_item_index].select();
+        break;
+    case Phaser.Keyboard.ENTER:
         this.menu_items[this.current_item_index].select();
         break;
     }
